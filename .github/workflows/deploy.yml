@@ -10,6 +10,7 @@ jobs:
       - name: Hola mundo
         run: echo "Hola mundo"
   second_job:
+    needs: first_jobs #Nos ayuda a crear dependencias entre jobs
     runs-on: ubuntu-latest
 
     steps:
