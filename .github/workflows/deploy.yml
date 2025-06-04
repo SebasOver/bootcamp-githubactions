@@ -14,7 +14,7 @@ jobs:
         run: echo "my_variable = Hola mundo" >> $GITHUB_OUTPUT
 
       - name: Obtener mensaje
-        run: echo "${{ steps.step1.outputs.my_variable }}" # Esto imprime el valor de my_variable
+        run: echo "${{ steps.step_1.outputs.my_variable }}" # Esto imprime el valor de my_variable
 
   second_job:
     if: ${{ github.ref == 'refs/heads/main' }} # Solo se ejecuta el job si el push es a la rama main
