@@ -9,8 +9,12 @@ jobs:
     env:
       NAME: CodigoFacilito
     steps:
-      - name: Hola mundo
-        run: echo "Hola mundo $NAME"
+      - name: Working dir
+        run: ls -al
+      - name: Action
+        uses: actions/checkout@v4
+      - name: Working dir after checkout
+        run: ls -al
   second_job:
     if: ${{ github.ref == 'refs/heads/main' }} # Solo se ejecuta el job si el push es a la rama main
     needs: first_jobs #Nos ayuda a crear dependencias entre jobs
